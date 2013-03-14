@@ -1,11 +1,8 @@
 	$(function(){
-		/*Backbone.sync = function(method, model, success, error){ 
-    	success();
-	  }*/
 
 
 	  var Tweet = Backbone.Model.extend({
-			urlRoot : '/tweets.json'
+			urlRoot : '/tweet.json'
 	  });
 
 
@@ -14,35 +11,32 @@
 			url: '/tweets.json'
 	  });
 
-
-
-
 	  var TweetView = Backbone.View.extend({
-	    	tagName: 'div',
+	    	tagName: 'li',
 			className: 'tweet',
 
 	    	template: _.template(
-			"	<div style=\"display:block\">	" +
-			"		<span style=\"float:left\">	" +
+			"	<header class=\"group\">	" +
+			"		<span class=\"tweet_image\">	" +
 			"			<img src=\"<%= profile_image_url %>\">	" +
 			"		</span>	" +
-			"		<span style=\"float:left; padding:0px 0px 0px 10px;\">	" +
+			"		<span class=\"tweet_screen_name\">	" +
 			"			<a href=\"https://twitter.com/<%= screen_name%>\"> @<%= screen_name%></a>	" +
 			"		</span>	" +
-			"	</div>	" +
+			"	</header>	" +
 			"	<br>	" +
-			"	<div style=\"display:block;clear:both;\">	" +
+			"	<section class=\"tweet_text\">	" +
 			"		<%= text %>	" +
-			"	</div>	" +
+			"	</section>	" +
 			"	<br>	" +
-			"	<div style=\"display:block\">	" +
-			"		<span style=\"float:left\">	" +
+			"	<footer>	" +
+			"		<span>	" +
 			"			<img src=\"../images/twitter-bird-light-bgs.png\" height=\"20\" width=\"20\">	" +
 			"		</span>	" +
-			"		<span style=\"float:left\">	" +
+			"		<span>	" +
 			"			<%= time_lapsed %>	" +
 			"		</span>	" +
-			"	</div>	"
+			"	</footer>	"
 			),
 
 
@@ -66,7 +60,7 @@
 
 
 	var TodoListView = Backbone.View.extend({
-		el: $('div#main_tweet'),
+		el: $('ul#main_tweet'),
 		initialize: function(){
 			this.collection.on('add', this.addOne, this);
 			this.collection.on('reset', this.addAll, this);
@@ -84,22 +78,58 @@
 	});
 
 	var tweets2 = new Tweets();	
+
 	
 	var todoListView = new TodoListView({
 			collection: tweets2
 		});
 
-	tweets2.fetch();
+
+	var tweets_on_site = 0;	
+
+
+	tweets2.fetch(
+		{
+    	success: function(collection, response){
+        		tweets_on_site = tweets_on_site + tweets2.length;
+    		}
+    	}
+    	);
 
 
 	$('#Next').click(function(){sweep('-=');});
 	$('#Previous').click(function(){sweep('+=');});
 
 
+
+
+	/*track that current position of the slider*/
 	var slider_index = 0;
+	
+	/*how many tweets have been recovered from the server
+	this will be used later when iterating through diffrent viewport 
+	sizes that use different frames .*/
+	var tweets_seen = 0;
 
 
 	var sweep = function(direction){
+
+			/*the figure below computes the number of tweets on the screen*/
+			var frame_size = 0;
+
+			/*current width of the individual tweets this is the full box*/
+			var current_tweet_width = parseInt($('.tweet:first').outerWidth(true),10)
+
+			/*this is the lnegth of the total tweet frame*/
+			var tweets_frame_width = parseInt($('#tweets_frame').width());
+
+			/*compute the number of tweets that can fit snug on the screen
+			then take the floor of that*/
+			frame_size = Math.floor(tweets_frame_width/current_tweet_width);
+
+
+
+			/*compute values and update variables based on the direction */
 			if (direction == '+=')
 			{
 				if (slider_index == 0){
@@ -111,18 +141,22 @@
 			else
 				slider_index -= 1;
 			  
+			/*compute the size of the sweep*/
+			var width = parseInt($('.tweet:first').outerWidth(true),10)*frame_size;
+						
+ 
+			$('ul#main_tweet').queue(function(next){
+				$(this).animate(
+					{'margin-left': direction+width},
+					{
+						duration: 1000
+					}
+				);
+				next();
+			});
+		}/*end sweep function*/
 
-			var width = $('.tweet:first').width()*3;
-			
- 				$('div#main_tweet').queue(function(next){$(this).animate(
-						{'left': direction+width},
-						{duration: 1000}
-						);
-						next();
-						});
-			}
-
-	})
+	})/*end jquery*/
 
 
 

@@ -35,3 +35,30 @@ View the contact page to see a sample of Backbone.js which can be viewed at stat
 
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+
+ 2: The Revisit   (Tag v0.0.2)
+----------------------------------
+
+
+This version contains code that I revisited after a 4 month stint that lasted from 10/2012 – 02/2013. As mentioned in the previous description the role related to data engineering and working primarily with Ruby, SQL, Extract Transform and Load (ETL), Postgres and AWS S3.  The position required no web application engineering knowledge. However, I was working on a work-related passion side project that involved ultimately using Ruby on Rails. 
+
+After the conclusion of the aforementioned position, I went back to working with Python and engaging Web Application engineering. It was also time to sharpen and refine my skills so I revisited Code school (Public profile accessible at,  http://www.codeschool.com/users/rcchirwa ) to go over courses that I had completed last (2012) spring and summer prior to the Ruby Bits Module to recalibarate myself from a Data Engineer to a Web Application Engineer.
+
+I used the information acquired above as well as the rekindled knowledge to revisit the project. The difference between the first commit and this commit is to show the maturation and evolution of my Front End Engineering skills.
+
+Major Differences: 
+	- restructured a lot of the HTML code to incorporate more HTML5 tags and structures
+	- refined the CSS3 for the project after gaining a better grasp on various related concepts.   
+	- Responsive/Adaptive Web Design added to it to the sit look different on a mobile device or changes when you resize the browser.
+	- The functionality of the Tweeter feed on the Contact page has been improved
+	- Did a better job of structuring and commenting the code
+
+
+View the tweet2.js file to get an sample of the my current Backbone.js work.
+
+
+The version of this site can currently be seen at http://www.508aliiance.appspot.com
+
+For contrast purposes, original of the site is still available at is available at http://www.pranacoding.appspot.com and the associated code is located in the first commit. Remember this version is non-responsive
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

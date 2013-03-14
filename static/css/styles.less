@@ -1,7 +1,7 @@
-*{ margin: 0; padding: 0; }
-body { font-family: Arial, Helvetica, sans-serif; font-size: 10px;background-color: #000000; }
 
-
+/*
+This is the only font face the we are using now
+*/
 @font-face {
 	font-family: 'Wanted_M54';
 	src: url('/fonts/Wanted_M54.eot');
@@ -10,33 +10,8 @@ body { font-family: Arial, Helvetica, sans-serif; font-size: 10px;background-col
 	font-weight: normal;
 	font-style: normal;
 }
-	UTILITY STYLES				  				  
-					  				  
-.floatLeft 									{ float: left; margin-right: 10px;}
-.floatRight									{ float: right; }
-.clear { clear: both; }
-a	{ outline: none; }
 
 
-/*
-	PAGE STRUCTURE
-*/
-/*#page-wrap { width: 960px; margin: 25px auto; position: relative; min-height: 600px;
-	  background: url(../images/bg.png) top center;}*/
-
-
-/*
-	TYPOGRAPHY
-*/
-ul{ list-style: square inside; }
-a, a:visited{ color: #729dff; text-decoration: none; }
-a:hover, a:active{ color: white; }
-blockquote{ padding: 0 20px; margin-left: 20px; border-left: 20px solid #ccc; font-size: 14px; 
-							font-family: Georgia, serif; font-style: italic; margin-top: 10px;}
-
-/*
-	SLIDER
-*/
 
 
 
@@ -44,46 +19,65 @@ blockquote{ padding: 0 20px; margin-left: 20px; border-left: 20px solid #ccc; fo
 @container_width: 100%;/*960px;*/
 @menu_bar_color: transparent;
 
-.center_in_div {
-    height: @container_height;
-    width: @container_width;
-    margin: 0px auto;
-    border: 0px;
-    background-color: #000000;
+
+
+
+
+
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td { margin: 0; padding: 0; }
+table { border-collapse: collapse; border-spacing: 0; }
+fieldset,img { border: 0; }
+address,caption,cite,code,dfn,em,strong,th,var { font-style: normal; font-weight: normal; }
+ol,ul { list-style: none; }
+caption,th { text-align: left; }
+h1,h2,h3,h4,h5,h6 { font-size: 100%; font-weight: normal; }
+q:before,q:after { content: ''; }
+abbr,acronym { border: 0; }
+a { outline: none; text-decoration: none; }
+a img { border: none; }
+.clear { clear: both; font-size: 1px; line-height: 1px; overflow: hidden; visibility: hidden; width: 0; height: 0; }
+.texthide { text-indent: -9999em; }
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+display:block;
 }
 
 
 
-.page-layer {
-	height: @container_height;
-	width: @container_width;
-	position: absolute;
-	background-color: transparent;
-	top: 0;
-	left: 0;
+
+
+.group:before, .group:after {
+	content: "";
+	display: table;
+}
+
+.group:after {
+	clear: both;
+}.3
+
+
+.group {
+	zoom: 1; /* IE6&7 */
 }
 
 
+html {
+	font-size:10px;
+}
 
 
+body{
+	font-size:100%;/*1em = 10px */
+}
 
 
-
-
-
-
-
-
-
-
-
-
-
+/*backgrounds contained in the main pages*/
 .back-base {
 	background-color: #000000;
 	-webkit-background-size: 100% 100%;
 	-moz-background-size: 100% 100%;
-	-o-background-size: cover;
+ 	-o-background-size: cover;
 	background-size: 100% 100%;
 }
 
@@ -136,38 +130,85 @@ blockquote{ padding: 0 20px; margin-left: 20px; border-left: 20px solid #ccc; fo
 
 
 
-
-
-/*
-
-
-
-
-.back {
-	background-color: #FFFFFF;
-	background: url(../images/hardhittin.jpg) no-repeat center center fixed; 
-	-webkit-background-size: 100% 100%;
-	-moz-background-size: 100% 100%;
-	-o-background-size: cover;
-	background-size: 100% 100%;
+#main-menu-ul{
+	width: @container_width;
+	padding: (30px/@container_width)*100 (10px/@container_width)*100; /*context container width */
+	height: 100%;
+	display:block;
+	text-align:center;
+	background-color: @menu_bar_color;
+	margin: 0 auto;
+	border: 0px;
 }
 
 
-.back-danger {
-	background-color: #FFFFFF;
-	background: url(../images/grunge-danger-background.png) no-repeat center center fixed; 
-	-webkit-background-size: 100% 100%;
-	-moz-background-size: 100% 100%;
-	-o-background-size: cover;
-	background-size: 100% 100%;
+
+.menu-li {
+	display:inline;
+	padding: 0px 10px;
+	text-align: center;
+	font: bold 80%  "Wanted_M54", Georgia, serif; /********8px/10px**********/
+	text-transform: uppercase;
+	line-height: 120%; /***12px/10px***/
+	color: #000000;
+	text-shadow: 1px 1px 1px #fff;
+	background-color: transparent;
+	cursor: pointer;
+	z-index: 2;
+	border: 0px;
 }
 
-*/
+
+
+#main-menu a {
+	font: bold 300% "Wanted_M54", Georgia, serif; /*24px/8px*/
+	color:rgb(0,0,0);
+	text-shadow: 50% 50% 50% rgba(255, 255, 255, 1);/*4px/8px 4px/8px 4px/8px*/
+	letter-spacing: 25%; /*2px/8px*/
+	text-align:center;
+
+	-webkit-transition: color .5s ease-in-out;
+	-moz-transition: color .5s ease-in-out;
+	-o-transition: color .5s ease-in-out;
+	-ms-transition: color .5s ease-in-out;
+	transition: color .5s ease-in-out;
+}
 
 
 
+#main-menu a{ 
+outline: none;}
 
-#front_text, #back_text,#double_text,#tweet_layer {
+#main-menu a:hover, 
+#main-menu a:active{ 
+	color:  #808080;
+	text-shadow: 50% 50% 50% rgba(255, 255, 255, 1);/*4px/8px 4px/8px 4px/8px*/
+}
+
+
+
+/*Landing Page*/
+
+.center_in_div {
+    height: @container_height;
+    width: @container_width;
+    margin: 0px auto;
+    border: 0px;
+    background-color: #000000;
+}
+
+
+.page-layer {
+	height: @container_height;
+	width: @container_width;
+	/*position: absolute;*/
+	background-color: transparent;
+	top: 0;
+	left: 0;
+}
+
+
+#front_text, #back_text,#double_text,{
 	height: @container_height;
 	width: @container_width;
 	position: absolute;
@@ -175,6 +216,11 @@ blockquote{ padding: 0 20px; margin-left: 20px; border-left: 20px solid #ccc; fo
 	top: 0;
 	left: 0;
 }
+
+
+
+
+
 
 #double_text{
 	background-color: transparent;
@@ -192,23 +238,7 @@ blockquote{ padding: 0 20px; margin-left: 20px; border-left: 20px solid #ccc; fo
 	width: 100%;
 	margin: 0px auto;
 	text-align:center;
-	font: bold 80px "Wanted_M54", Georgia, serif;
-	color:rgb(255,255,255);
-	text-shadow: 4px 4px 4px rgba(0, 0, 0, 1);
-	letter-spacing: 2px;
-}
-
-
-#contact_a,
-#tweet_layer_a  {
-	display:block;
-	position: absolute;
-	top:33%;
-	vertical-align:middle;
-	width: 100%;
-	margin: 0px auto;
-	text-align:center;
-	font: bold 80px "Wanted_M54", Georgia, serif;
+	font: bold 100% "Wanted_M54", Georgia, serif; /*10px/10px*/
 	color:rgb(255,255,255);
 	text-shadow: 4px 4px 4px rgba(0, 0, 0, 1);
 	letter-spacing: 2px;
@@ -229,230 +259,243 @@ blockquote{ padding: 0 20px; margin-left: 20px; border-left: 20px solid #ccc; fo
 	z-index:1;
 }
 
+#intro
+{
+	font: bold 800% "Wanted_M54", Georgia, serif; /*80px/10px*/
+}
 
 #enter {
-display:block;
-font: bold 35px "Wanted_M54", Georgia, serif;
-color:rgb(0,0,0);
-background-color: #FFFFFF;
-/*font: bold 55px "DroidSansBold", Verdana,sans-serif;
-text-transform: uppercase;*/
-text-shadow: 4px 4px 4px rgba(255, 255, 255, 1);
-letter-spacing: 2px;
-text-align:center;
-}
-
-
-#enter  a{
-color:rgb(0,0,0);
-}
-
-
-#enter  a:hover{
-color:rgb(255,0,0);
-}
-
-#hear {
-font: bold 25px "Wanted_M54", Georgia, serif;
-color:rgb(0,255,255);
-text-shadow: 4px 4px 4px rgba(255, 255,255, 1);
-letter-spacing: 2px;
-text-align:center;
-}
-
-
-#menu a {
-font: bold 25px "Wanted_M54", Georgia, serif;
-color:rgb(0,0,0);
-text-shadow: 4px 4px 4px rgba(255, 255, 255, 1);
-letter-spacing: 2px;
-text-align:center;
-
-}
-
-
-
-
-/***** HEADER & NAVIGATION *****/
-
-
-
-nav#menu{
-	width: @container_width;
-	padding: 0px 10px;
-	/*background-color: #000000;
-	background-color: rgb(0, 0, 0);
-	RGBa with 0.6 opacity */
-	background-color: rgba(0, 0, 0, 0.0);
-
-}
-
-
-
-#menu-ul{
-	width: @container_width;
-	padding: 2px 10px;
-	height: 100%;
 	display:block;
-	text-align:center;
-	background-color: @menu_bar_color;
-	margin: 0px auto;
-}
-
-
-
-.menu-li {
-	display:inline;
-	padding: 0px 10px;
-	text-align: center;
-	font: bold 8px  "Wanted_M54", Georgia, serif;
-	text-transform: uppercase;
-	line-height: 12px;
-	color: #000000;
-	text-shadow: 1px 1px 1px #fff;
-	background-color: transparent;
-	cursor: pointer;
-	z-index: 2;
-	border-right: 1px solid #FFFFFF;
-}
-
-li.menu-li:first-child {
-	padding: 0px 10px 0px 0px;
-}
-
-li.menu-li:last-child {
-	/*width: 190px;*/
-	padding: 0px 0px 0px 10px;
-	border-right: 0px solid #000000;
-}
-
-.menu-li a{
-	color:#000000;
-}
-
-.menu-li a:visited {
-	color: #000000;
-}
-
-
-.menu-li a:hover,
-.menu-li a:hover {
-	color: #FFFFFF;
-	text-shadow: 3px 3px 3px #000000;
-}
-
-#front{	
-	width: 75%
-	display: block;
-	text-align: center;
-	margin: 0px auto;
-	font: bold 80px "Wanted_M54", Georgia, serif;
-	color:rgb(255,255,255);
+	font: bold 100% "Wanted_M54", Georgia, serif;/*35px/10px*/
+	color:rgb(0,0,0);
+	background-color: #FFFFFF;
 	text-shadow: 4px 4px 4px rgba(0, 0, 0, 1);
 	letter-spacing: 2px;
-	background-color: transparent;
+	text-align:center;
 }
 
 
-
-.logo {
-background: url(../images/twitter-icon.png);
-display: block;
-height: 233px;
-width: 350px;
-text-indent: -9999px;
-border: 2px;
-}
-
-.logo:hover, .logo:focus {
-background-position: 0 -233px;
-}
-
-.logo2 {
-background: url(../images/twitter-icon1.png);
-display: block;
-height: 82px;
-width: 350px;
-text-indent: -9999px;
-border: 2px;
-}
-
-.logo2:hover, .logo2:focus {
-background-position: 0 -82px;
-}
-
-
-.logo3{
-background: url(../images/soundcloud-icon.png);
-display: block;
-height: 201px;
-width: 350px;
-background-position: 0 -1px;
-text-indent: -9999px;	
-}
-
-.logo3:hover, .logo3:focus {
-background-position: 0 -201px;
+#enter a{
+	color:rgb(255,255,255);
 }
 
 
 
 
-.logo4{
-background: url(../images/youtube-icon.png);
-display: block;
-height: 128px;
-width: 350px;
-background-position: 0x -1px;
-text-indent: -9999px;	
-}
 
-.logo4:hover, .logo4:focus {
-background-position: 0 -127px;
-}
 
-.logo5{
-background: url(../images/facebook-logo.png);
-display: block;
-height: 132px;
-width: 350px;
-background-position: 0x -1px;
-text-indent: -9999px;	
-}
+/*contact page stuff*/
 
-.logo5:hover, .logo5:focus {
-background-position: 0 -132px;
+#contact_info {
+	color: #FFFFFF;
+	padding: 5% 12.5% 0 12.5%;
+	border: 2px; 
+	border-color: #FFFFFF;
 }
 
 
 
-.logo6{
-background: url(../images/tumblr-logo.png);
-display: block;
-height: 91px;
-width: 350px;
-background-position: 0px 0px;
-text-indent: -9999px;	
-}
-
-
-.logo6:hover, .logo6:focus {
-background-position: 0 -91px;
-}
-
-
-.tweet{
-
-color:rgb(255,255,255);
-float:left; 
-padding:50px 0px 0px 10px;
-height:160px;
-width:240px;
-font:Georgia, serif;
-
-
+#contact_info header h1{
+	font-size: 240%; /*24px/10px*/
 }
 
 
 
 
+#contact_info section {
+	padding:20px 0px;
+}
+
+
+#contact_info section pre {
+	font-size: 120%; /*12px/10px*/
+}
+
+
+
+/*tweet related css */
+section#tweets_frame{
+	 margin: 0 auto; 
+	 bottom: 0 px; 
+	 width:80%; 
+	 padding-left:5px; 
+	 overflow:hidden;
+	 background-color: rgba(20,20,20,0.5);	
+}
+
+
+
+/*section#tweet_nav{
+	 height: 15px;	
+}*/
+
+section#tweet_container{
+	max-height: 225px;
+	overflow:hidden;
+}
+
+span.tweet-nav-button{
+	font: bold;
+	font-size: 200%; /*20px/10px*/
+	text-transform: uppercase;
+	color: #000000;
+	text-shadow: 1px 1px 2px #ffffff;
+}
+
+span.tweet-nav-button:hover{
+	text-shadow: 2px 2px 0px #ffffff;
+}
+
+li.tweet{
+	color:rgb(255,255,255);
+	float:left;
+	display: inline;
+	font: normal 120% Georgia, serif; /********12px/10px**********/
+	padding:50px 0px 0px 10px;
+	height:225px;
+	width:225px;
+}
+
+
+
+.tweet_image {
+	float:left;
+}
+
+
+
+.tweet_screen_name {
+	float:left; 
+	padding:0px 0px 0px 10px;
+}
+
+
+
+footer span{
+	float:left;
+}
+
+
+.tweet_text {
+	display:block;
+	clear:both;
+}
+
+
+
+
+
+#outer_soundcloud_plugin
+{
+	width:60%;
+	height:200px;
+	overflow:hidden;
+	position:relative;
+	margin:10% auto;
+}
+
+
+
+
+
+/*mobile this is my main focus*/
+@media screen and (max-width:480px)
+{
+	body {
+		font-size:75%
+		}
+
+
+	/*remove the images to non-busy mobile background*/	
+	.back {
+		background-color: #000000;
+		background-image:none;
+	}
+
+	.back-videos {
+		background-color: #4d4e50;
+		background-image:none;
+	}
+
+	.back-home {
+		background-color: #000000;
+		background-image:none;
+	}
+
+	.back-bio {
+		background-color: #656565;
+		background-image:none;
+	}
+
+	.back-contact {
+		background-color: #000000;
+		background-image:none;
+	}
+
+	.back-tito {
+		background-color: #8b8a8a;
+		background-image:none;
+	}
+
+	.back-music {
+		background-color: #926800;	
+		background-image:none;
+
+	}
+
+	.back-photo {
+		background-color: #00320c;
+		background-image:none;
+	}
+
+	#main-menu-ul{
+	width: inherit;
+	padding: 0 0;
+	/*padding: (5px/@container_width)*100 (1px/@container_width)*100;*/ /*context container width */
+	}
+
+
+	.menu-li {
+		display:block;
+		border-style:solid;
+		border-bottom: 1px solid #ffffff;
+		padding:0.75% 0.5% 0.5% 0.5%;
+	}
+
+
+	#tweets_frame{
+		width: inherit;
+	}
+
+
+	section#tweets_frame{
+		width: inherit;
+	}
+
+	section#tweet_nav{
+			width: inherit;
+	}
+
+	section#tweet_container{
+			width: inherit;
+	}
+
+	section#tweet_container ul{
+			width: inherit;
+	}
+
+
+
+
+	#outer_soundcloud_plugin
+	{
+		width:100%;
+		overflow:hidden;
+		position:relative;
+		margin:0 auto;
+		border-top: 2px solid #000000;
+		border-bottom: 2px solid #000000;
+	}
+
+
+}/*end media query*/

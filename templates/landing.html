@@ -9,70 +9,8 @@
    <link rel="shortcut icon" href="images/hardhittinent.ico">
    <link rel="stylesheet/less" type="text/css" href="css/styles.less">
    <script type="text/javascript" src="js/less-1.3.0.min.js"></script>
-   <!-- script type="text/javascript" src="js/jquery-1.2.6.min.js"></script>
-	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
-	<script type="text/javascript" src="http://ajax.cdnjs.com/ajax/libs/underscore.js/1.1.4/underscore-min.js"></script>
-	<script type="text/javascript" src="http://ajax.cdnjs.com/ajax/libs/backbone.js/0.3.3/backbone-min.js"></script-->
-
-	<script type="text/javascript" src="js/jquery.min.js"></script>
-	<!--script type="text/javascript" src="js/underscore-min.js"></script>
-	<script type="text/javascript" src="js/backbone-min.js"></script-->
-
-
-	
-   <script type="text/javascript">
-
-		var int = []
-
-		fadeForeground = function(){
-						$("#front_text").animate({ opacity: 0},2500)
-						};
-		//showBackground = function(){$("#back_text").animate({ opacity: 1},5000).delay(5000).animate({ opacity: 0},5000)};
-		showMainDouble = function(){
-					     $('#double_text').animate({ opacity: 1,},5000);
-					     $('#double_text').css({"z-index": 1});
-						};
-		showEnter = function(){$("#enter").animate({ opacity: 1},1250)};
-		
-					
-		afterBackground = function(){
-					$("#intro").animate({ opacity: 1},1500,showEnter);
-				}		
-
-		jQuery(function($){
-			$("#intro, #enter, #back_text, #double_text").css({ opacity: 0});
-			//$("#intro, #enter").css('textShadow','{hex_string}} 4px 4px 4px');
-			afterBackground();
-			$("#aenter").hover(
-			  function () {
-				//alert(1)
-				$("#intro").css({color: '#FF0000'});
-				$("#enter").css({background: '#000000'});
-				$("#one_landing").css({background: '#FFFFFF'});
-				$("body").css({background: '#FFFFFF'});
-				},
-			  function () {
-				$("#intro").css({color: '#FFFFFF'});
-				$("#enter").css({background: '#FFFFFF'});
-				$("#one_landing").css({background: '#000000'});
-				$("body").css({background: '#000000'});
-			  }
-			);
-
-			$("#aenter").click(
-			  function (e) {
-				e.preventDefault();
-				$("#intro").css({color: '#FFFFFF'});
-				$("#enter").css({background: '#FFFFFF'});
-				$("#one_landing").css({background: '#000000'});
-				$("body").css({background: '#000000'});
-				fadeForeground();
-				//showBackground(); 
-				showMainDouble();
-			  }
-			);
-		});
-	</script>
+ 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+ 	 <script type="text/javascript" src="js/landing.js"></script>
  </head>
 
 <body>
@@ -80,7 +18,7 @@
 		<div class="center-in-div">
 			<div id="front_text_a">
 					<span id="intro">HARD HITTIN ENT<span>
-					<span id="enter"><i><a id="aenter" href="index.html">CLICK TO ENTER</a></i></span>
+					<span id="enter"><i><a id="aenter" href="index.html">ENTER</a></i></span>
 			</div>
 		</div>
 	</div>
