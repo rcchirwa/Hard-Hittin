@@ -1,0 +1,70 @@
+application: 508aliiance
+version: 2
+runtime: python27
+api_version: 1
+threadsafe: true
+
+libraries:                                                                      
+- name: jinja2                                                                  
+  version: latest 
+
+handlers:
+
+#- url: /.*
+#  script: 508alliance.py
+
+# site root
+
+- url: /(.*\.css)
+  mime_type: text/css
+  static_files: static/\1
+  upload: static/(.*\.css)
+  
+- url: /(.*\.less)
+  mime_type: text/css
+  static_files: static/\1
+  upload: static/(.*\.less)
+
+
+
+- url: /(.*\.js)
+  mime_type: text/javascript
+  static_files: static/\1
+  upload: static/(.*\.js)
+
+- url: /js
+  static_dir: js
+
+
+# image files
+
+- url: /*fonts/(.*\.ttf)
+  mime_type: font/truetype
+  static_files: static/fonts/\1
+  upload: static/fonts/(.*\.ttf)
+
+
+- url: /*fonts/(.*\..*)
+  mime_type: application/octet-stream
+  static_files: static/fonts/\1
+  upload: static/fonts/(.*\..*)
+
+- url: /fonts
+  static_dir: fonts
+
+
+# image files
+- url: /*images/(.*\..*)
+  static_files: static/images/\1
+  upload: static/images/(.*\..*)
+
+- url: /images
+  static_dir: images/
+
+- url: /.*
+  script: 508alliance.application
+
+- url: /
+  static_files: static/html/absr.html
+  upload: static/html/absr.html
+  expiration: "15m"

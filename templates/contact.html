@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block page_title %} HardHittin Music {% endblock %}
+{% block head_html %}
+  	<script src="js/underscore-min.js"></script>  
+	<script src="js/backbone-min.js"></script>
+	
+	<script type="text/javascript" src="js/tweet2.js"></script>
+{% endblock %}
+{% block body_background %}class="back-contact"{% endblock %}
+{% block page_block %}
+	<section id = "contact_info">
+		<header> 
+			<h1>
+				Contact Info..
+			</h1>
+		</header>
+		<section>
+			<pre>
+Hard Hittin Ent
+Worcester, MA, 01604
+		</pre>
+		</section>	
+	</section>
+
+
+	<section id="tweets_frame">
+		<nav id="tweet_nav">
+
+			<span class="tweet-nav-button"><a id="Previous">Previous &nbsp; &nbsp; &nbsp;</a></span>
+
+			<span class="tweet-nav-button"><a id="Next">&nbsp; &nbsp; &nbsp; Next</a></span>
+		</nav>
+
+
+		<section id="tweet_container">
+			<ul id="main_tweet">
+			</ul>
+		</section>
+
+	</section>
+{% endblock %}
+

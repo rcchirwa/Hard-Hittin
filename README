@@ -1,0 +1,18 @@
+This code is part of an on going venture i.e. site creating a Web Application  for an individual in the entertainment industry who agreed for me to open source(place on github) any work related to the site. 
+
+Version 1: The First Waltz
+
+This contains code that was written during my first year of using open source technology to create web applications.  Prior to that, I used proprietary stacks such as one current provided by Oracle. 
+
+The primary noteworthy features used here are as follows:
+
+- HTML5
+- CSS3
+- JavaScript
+- Backbone.js
+- JSON
+
+- Python
+- Google App Engine
+
+This is raw code that is not structured and was part of my sandbox aka evolving project. This code was last worked on in October 2012 proir to working a full position that involved Data Enginering and the use of Ruby as a scripting/object-oriented tool.
