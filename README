@@ -1,0 +1,37 @@
+This code is part of an on going venture i.e. site creating a Web Application  for an individual in the entertainment industry who agreed for me to open source(place on github) any work related to the site. 
+
+Version 1: The First Waltz (Tag v0.0.1)
+-----------------------------------------------
+
+This contains code that was written during my first year of using open source technology to create web applications.  Prior to that, I used proprietary stacks such as one current provided by Oracle. 
+
+The primary noteworthy technologies used here are as follows:
+
+
+Front End:
+
+	HTML5
+	CSS3
+	LESS CSS
+	JavaScript
+	Backbone.js
+	Underscore.js
+	JQuery
+	JSON
+
+
+Back End:
+
+	Python
+	Google App Engine
+	Jinja Templating
+
+This is raw code that is not structured and was part of my sandbox aka evolving project. This code was last worked on in October 2012 prior to working a full position that involved Data Engineering and the use of Ruby as a scripting/object-oriented tool. 
+
+The dirty version of the site is currently viewable at the following location: http://www.pranacoding.appspot.com
+
+View the contact page to see a sample of Backbone.js which can be viewed at static/js/tweet2.js
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
